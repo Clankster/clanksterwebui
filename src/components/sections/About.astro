@@ -1,0 +1,52 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+import AccordionItem from "../ui/AccordionItem.astro";
+
+const content = [
+	{
+		index: 1,
+		title: "Monthly Rewards",
+		description:
+			"Every month, $CLANKSTER holders receive rewards based on their share of the total supply.",
+	},
+	{
+		index: 2,
+		title: "Airdrops from New Projects",
+		description:
+			"After the consultation, we will conduct thorough research to identify your target audience, competitors, and industry trends. This will help us develop a comprehensive strategy to achieve your business goals.",
+	},
+	{
+		index: 3,
+		title: "Extra Rewards for Loyalty",
+		description:
+			"Once the research is complete, we will begin implementing the strategy. This may include optimizing your website, creating content, and launching marketing campaigns. Our team will work diligently to ensure that all tasks are completed on time and within budget.",
+	},
+];
+
+const description =
+	"Clankster is designed to empower holders, support innovation, and grow the Clanker ecosystem, creating a sustainable and rewarding experience for the community.";
+---
+
+<Section id="about">
+	<div class="mt-20 mb-5">
+		<SectionTitle
+			sectionTitle="How Clankster Works"
+			description={description}
+			classes={{
+				description: "sm:w-full",
+			}}
+		/>
+		{
+			content.map((item) => {
+				return (
+					<AccordionItem
+						index={item.index}
+						title={item.title}
+						description={item.description}
+					/>
+				);
+			})
+		}
+	</div>
+</Section>

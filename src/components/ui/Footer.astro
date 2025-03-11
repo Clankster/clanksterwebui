@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import Facebook from "../../assets/facebook.svg";
+import Linkedin from "../../assets/linkedin.svg";
+import Logo from "../../assets/logo-alt.svg";
+import Twitter from "../../assets/twitter.svg";
+import ShortForm from "../ui/ShortForm.astro";
+
+const logos = [
+	{ name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
+	{ name: "Facebook", src: Facebook, link: "https://facebook.com" },
+	{ name: "Twitter", src: Twitter, link: "https://twitter.com" },
+];
+
+const links = [
+	{ name: "About us", href: "#about" },
+	{ name: "Roadmap", href: "#services" },
+	{ name: "Clank.fun", href: "#cases" },
+	{ name: "DexScreener", href: "#Testimonials" },
+	{ name: "CoinGecky", href: "#Home" },
+];
+---
+
+<section class="sm:px-5">
+	<div class="mx-auto w-full max-w-[1240px]">
+		<div
+			class="bg-dark text-gray px-[15px] py-[55px] sm:rounded-t-[45px] lg:px-[60px]"
+		>
+			<div>
+				<div
+					class="flex flex-col items-center justify-between gap-7 lg:flex-row"
+				>
+					<picture>
+						<a href="#home">
+							<Image src={Logo} alt="Clankster" />
+						</a>
+					</picture>
+					<ul class="flex flex-col gap-5 sm:flex-row">
+						{
+							links.map((link) => {
+								return (
+									<li class="text-center">
+										<a class="text-lg underline" href={link.href}>
+											{link.name}
+										</a>
+									</li>
+								);
+							})
+						}
+					</ul>
+					<ul class="flex gap-5">
+						{
+							logos.map((logo) => {
+								return (
+									<li>
+										<a href={logo.link} target="_blank">
+											<picture>
+												<Image src={logo.src} alt={logo.name} />
+											</picture>
+										</a>
+									</li>
+								);
+							})
+						}
+					</ul>
+				</div>
+
+				<div class="mt-[66px] mb-[51px] flex flex-col lg:flex-row">
+					<div
+						class="flex w-full flex-col text-center lg:w-[30%] lg:text-start"
+					>
+						<h3
+							class="bg-green text-dark mb-5 w-fit rounded-lg px-2 text-center text-xl font-medium md:text-left"
+						>
+							Contact us:
+						</h3>
+						<div class="flex flex-col justify-between gap-5 text-lg">
+							<span>Email: clanksteronbase@gmail.com</span>
+							<span>app.deform.cc/clanksteronbase</span>
+							<span class="lg:w-3/4">x.com/clanksteronbase</span>
+						</div>
+					</div>
+					<div class="my-10 grow lg:my-0 lg:ml-12">
+						<ShortForm />
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gray mb-12 h-[1px]"></div>
+			<div class="text-lg max-md:text-center">© 2023 Clankster.</div>
+		</div>
+	</div>
+</section>

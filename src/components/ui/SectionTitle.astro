@@ -1,0 +1,23 @@
+---
+const { sectionTitle, description, classes } = Astro.props;
+import { twMerge } from "tailwind-merge";
+---
+
+<div class="mb-20 flex flex-col items-center gap-10 sm:flex-row">
+	<h2
+		class={twMerge(
+			"greenhead text-center text-3xl font-medium whitespace-nowrap sm:text-left sm:text-[40px]",
+			classes?.title,
+		)}
+	>
+		{sectionTitle}
+	</h2>
+	<p
+		class={twMerge(
+			"w-auto text-center sm:w-[580px] sm:text-left sm:text-lg",
+			classes?.description,
+		)}
+	>
+		{description}
+	</p>
+</div>

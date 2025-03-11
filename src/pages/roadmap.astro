@@ -1,0 +1,43 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import propImg from "../assets/pics/proposal-pic.png";
+import Card from "../components/ui/Card.astro";
+import Section from "../components/sections/Section.astro";
+---
+
+<Section>
+	<MainLayout title="Roadmap" showFooter={false}>
+		<div class="mb-[140px] py-40 text-center">
+			<p class="font-meidum text-center text-3xl">
+				Clankster Airdrop Mechanism is yet TBA
+			</p>
+		</div>
+
+		<Card>
+			<div
+				class="relative mb-[163px] flex rounded-[45px] bg-[#F3F3F3] p-[60px]"
+			>
+				<div class="flex w-full flex-col gap-[26px] md:w-[50%]">
+					<h2 class="text-[2.375rem] font-medium">Hold Bigger, Earn Bigger</h2>
+					<p class="text-lg">
+						Clankster’s airdrop mechanism requires users to register their
+						wallets with a one-time signature, track their holdings throughout
+						the month, and claim proportional rewards based on their average
+						token balance at the end of each month.
+					</p>
+					<button class="btn-primary">Buy $CLANKSTER</button>
+				</div>
+				<picture
+					class="absolute top-[-15%] right-[-10%] hidden h-[450px] items-center justify-center md:flex lg:right-0"
+				>
+					<Image
+						src={propImg}
+						alt="This is an illustration"
+						class="hidden md:flex lg:h-full lg:w-auto"
+					/>
+				</picture>
+			</div>
+		</Card>
+	</MainLayout>
+</Section>

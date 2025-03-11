@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import XLogo from "../../assets/x-logo.svg";
+import FarcasterLogo from "../../assets/farcaster-logo.svg";
+import TelegramLogo from "../../assets/telegram-logo.svg";
+import UnknownLogo from "../../assets/logo.svg";
+import DiscordLogo from "../../assets/discord-logo.svg";
+import Section from "./Section.astro";
+
+const links = [
+	{ logo: XLogo, alt: "X logo" },
+	{ logo: FarcasterLogo, alt: "Farcaster logo" },
+	{ logo: TelegramLogo, alt: "Telegram logo" },
+	{ logo: UnknownLogo, alt: "Unknown logo" },
+	{ logo: DiscordLogo, alt: "Discord logo" },
+];
+---
+
+<Section id="sponsors">
+	<div class="flex flex-wrap items-center justify-between">
+		{
+			links.map((link) => {
+				return (
+					<div class="grayscale transition duration-200 hover:grayscale-0">
+						<Image
+							src={link.logo}
+							class="mx-auto h-16 w-auto"
+							alt={link.alt}
+							loading="lazy"
+						/>
+					</div>
+				);
+			})
+		}
+	</div>
+</Section>
