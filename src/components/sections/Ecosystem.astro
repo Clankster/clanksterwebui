@@ -8,19 +8,18 @@ const cards = [
 		index: 0,
 		title:
 			"Clanker is the backbone of the ecosystem, providing the tools and infrastructure needed to easily deploy ERC-20 tokens. It simplifies token creation, liquidity setup, and trade mechanisms, making it accessible for anyone to build and launch their ideas.",
-		link: "https://google.com",
+		link: "https://www.clanker.world/",
 	},
 	{
 		index: 1,
 		title:
 			"Clank Fun serves as the ecosystem’s intuitive UI and launchpad. It provides a user-friendly platform for deploying and trading Clanker-based tokens while giving creators and holders a space to interact, monitor performance, and explore new opportunities within the ecosystem.",
-		link: "https://google.com",
+		link: "https://clank.fun/",
 	},
 	{
 		index: 1,
 		title:
 			"Clankster fuels innovation by supporting projects within the Clanker ecosystem. It offers funding and liquidity to creators, while $CLANKSTER holders benefit from airdrops of newly launched tokens, rewards for loyalty, and ecosystem growth. Clankster ensures that both builders and holders thrive.",
-		link: "https://google.com",
 	},
 ];
 
@@ -41,17 +40,17 @@ import SectionTitle from "../ui/SectionTitle.astro";
 	>
 		{
 			cards.map((card) => (
-				<>
+				<a>
 					<Card>
 						<div class="text-gray m-[1px] flex h-full">
 							<div class="flex flex-col gap-5">
 								<p class="text-lg">{card.title}</p>
-								<a href={card.link} class="flex items-center gap-[15px]">
-									<span class="text-green text-xl">Learn more</span>
-									<picture>
-										<Image src={larrow} alt="Arrow pointing up right" />
-									</picture>
-								</a>
+								{card.link && (
+									<a href={card.link} class="flex items-center gap-[15px]">
+										<span class="text-green text-xl">Learn more</span>
+										<Image src={larrow} alt="" aria-hidden="true" />
+									</a>
+								)}
 							</div>
 						</div>
 					</Card>
@@ -63,7 +62,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
 							"lg:mx-16 lg:h-47 lg:border-r",
 						]}
 					/>
-				</>
+				</a>
 			))
 		}
 	</div>

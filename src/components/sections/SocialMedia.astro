@@ -3,16 +3,24 @@ import { Image } from "astro:assets";
 import XLogo from "../../assets/x-logo.svg";
 import FarcasterLogo from "../../assets/farcaster-logo.svg";
 import TelegramLogo from "../../assets/telegram-logo.svg";
-import UnknownLogo from "../../assets/logo.svg";
+import ClankerWorldLogo from "../../assets/clanker-world-logo.svg";
 import DiscordLogo from "../../assets/discord-logo.svg";
 import Section from "./Section.astro";
 
 const links = [
-	{ logo: XLogo, alt: "X logo" },
-	{ logo: FarcasterLogo, alt: "Farcaster logo" },
-	{ logo: TelegramLogo, alt: "Telegram logo" },
-	{ logo: UnknownLogo, alt: "Unknown logo" },
-	{ logo: DiscordLogo, alt: "Discord logo" },
+	{ href: "https://x.com/clanksteronbase", logo: XLogo, alt: "X" },
+	{
+		href: "https://warpcast.com/clankster",
+		logo: FarcasterLogo,
+		alt: "Farcaster",
+	},
+	{ href: "https://t.me/clankster", logo: TelegramLogo, alt: "Telegram" },
+	{
+		href: "https://www.clanker.world/clanker/0x3E1A6D23303bE04403BAdC8bFF348027148Fef27",
+		logo: ClankerWorldLogo,
+		alt: "Clanker world",
+	},
+	{ href: "https://discord.gg/vcfgPNmfHN", logo: DiscordLogo, alt: "Discord" },
 ];
 ---
 
@@ -21,14 +29,18 @@ const links = [
 		{
 			links.map((link) => {
 				return (
-					<div class="grayscale transition duration-200 hover:grayscale-0">
+					<a
+						href={link.href}
+						class="grayscale transition duration-200 hover:grayscale-0"
+					>
 						<Image
 							src={link.logo}
 							class="mx-auto h-16 w-auto"
 							alt={link.alt}
 							loading="lazy"
+							aria-hidden="true"
 						/>
-					</div>
+					</a>
 				);
 			})
 		}

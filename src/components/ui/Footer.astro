@@ -1,22 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import Facebook from "../../assets/facebook.svg";
-import Linkedin from "../../assets/linkedin.svg";
-import Logo from "../../assets/logo-alt.svg";
-import Twitter from "../../assets/twitter.svg";
+import LogoDark from "../../assets/logo-dark.svg";
 import ShortForm from "../ui/ShortForm.astro";
-
-const logos = [
-	{ name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
-	{ name: "Facebook", src: Facebook, link: "https://facebook.com" },
-	{ name: "Twitter", src: Twitter, link: "https://twitter.com" },
-];
 
 const links = [
 	{ name: "About us", href: "#about" },
 	{ name: "Roadmap", href: "#services" },
-	{ name: "Clank.fun", href: "#cases" },
-	{ name: "DexScreener", href: "#Testimonials" },
+	{
+		name: "Clank.fun",
+		href: "https://clank.fun/t/0x3e1a6d23303be04403badc8bff348027148fef27",
+	},
+	{
+		name: "DexScreener",
+		href: "https://dexscreener.com/base/0xd845a57e8c7cc7579c9c06fa05f638aceb7bf16a",
+	},
 	{ name: "CoinGecky", href: "#Home" },
 ];
 ---
@@ -27,12 +24,10 @@ const links = [
 			class="bg-dark text-gray px-[15px] py-[55px] sm:rounded-t-[45px] lg:px-[60px]"
 		>
 			<div>
-				<div
-					class="flex flex-col items-center justify-between gap-7 lg:flex-row"
-				>
+				<div class="flex flex-col items-center gap-7 lg:flex-row lg:gap-40">
 					<picture>
 						<a href="#home">
-							<Image src={Logo} alt="Clankster" />
+							<Image src={LogoDark} alt="Clankster" />
 						</a>
 					</picture>
 					<ul class="flex flex-col gap-5 sm:flex-row">
@@ -40,23 +35,8 @@ const links = [
 							links.map((link) => {
 								return (
 									<li class="text-center">
-										<a class="text-lg underline" href={link.href}>
+										<a href={link.href} class="text-lg underline">
 											{link.name}
-										</a>
-									</li>
-								);
-							})
-						}
-					</ul>
-					<ul class="flex gap-5">
-						{
-							logos.map((logo) => {
-								return (
-									<li>
-										<a href={logo.link} target="_blank">
-											<picture>
-												<Image src={logo.src} alt={logo.name} />
-											</picture>
 										</a>
 									</li>
 								);
@@ -75,9 +55,21 @@ const links = [
 							Contact us:
 						</h3>
 						<div class="flex flex-col justify-between gap-5 text-lg">
-							<span>Email: clanksteronbase@gmail.com</span>
-							<span>app.deform.cc/clanksteronbase</span>
-							<span class="lg:w-3/4">x.com/clanksteronbase</span>
+							<span>
+								Email: <a href="mailto:clanksteronbase@gmail.com">
+									clanksteronbase@gmail.com
+								</a>
+							</span>
+							<span>
+								<a href="https://app.deform.cc/clanksteronbase">
+									app.deform.cc/clanksteronbase
+								</a>
+							</span>
+							<span class="lg:w-3/4">
+								<a href="https://x.com/clanksteronbase">
+									x.com/clanksteronbase
+								</a>
+							</span>
 						</div>
 					</div>
 					<div class="my-10 grow lg:my-0 lg:ml-12">
