@@ -2,7 +2,7 @@
 	"title": "Positivus",
 	"description": "Positivus is a simple and minimalistic blog theme for Ghost. It is designed to be a perfect starting point for your blog project.",
 	"image": {
-		"src": "/og_image.jpg",
+		"src": "https://www.clankster.xyz/og_image.jpg",
 		"alt": "Positivus"
 	}
 }
