@@ -15,7 +15,7 @@ const menuitems = [
 ];
 
 const navButton = {
-	href: "https://github.com/manulthanura/Positivus",
+	href: "/airdrop",
 	label: "Airdrop",
 };
 ---
@@ -78,10 +78,7 @@ const navButton = {
 								<li>
 									<a
 										href={item.href}
-										class:list={[
-											"mobile-nav-link block rounded-sm px-3 py-2 text-xl font-normal text-black lg:bg-transparent lg:p-0",
-											item.href.startsWith("http") && "underline",
-										]}
+										class="mobile-nav-link block rounded-sm px-3 py-2 text-xl font-normal text-black lg:bg-transparent lg:p-0"
 										data-close-menu="true"
 									>
 										{item.label}

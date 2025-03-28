@@ -4,8 +4,7 @@ import LogoDark from "../../assets/logo-dark.svg";
 import ShortForm from "../ui/ShortForm.astro";
 
 const links = [
-	{ name: "About us", href: "#about" },
-	{ name: "Roadmap", href: "#services" },
+	{ name: "Roadmap", href: "/roadmap" },
 	{
 		name: "Clank.fun",
 		href: "https://clank.fun/t/0x3e1a6d23303be04403badc8bff348027148fef27",
@@ -14,7 +13,7 @@ const links = [
 		name: "DexScreener",
 		href: "https://dexscreener.com/base/0xd845a57e8c7cc7579c9c06fa05f638aceb7bf16a",
 	},
-	{ name: "CoinGecky", href: "#Home" },
+	{ name: "CoinGecko", href: "https://www.coingecko.com/en/coins/clankster" },
 ];
 ---
 
@@ -35,7 +34,7 @@ const links = [
 							links.map((link) => {
 								return (
 									<li class="text-center">
-										<a href={link.href} class="text-lg underline">
+										<a href={link.href} class="text-lg">
 											{link.name}
 										</a>
 									</li>
